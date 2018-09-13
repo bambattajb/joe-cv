@@ -1,0 +1,50 @@
+{
+  "Welcome" : {
+    "title" : "The Curriculum Vitae of Joe Buckle",
+    "content" : "<p>I have 10+ years experience in website and application development.<br />In this time I have developed experience in:</p><ul><li>PHP</li><li>Python</li><li>JavaScript</li><li>MySQL</li><li>WordPress</li><li>Laravel</li><li>Linux</li><li>...loads of other stuff</li></ul><p>My job role is <b>Full Stack Developer</b> which means that I am comfortable working on all parts of the stack but I do not excel in any one area.</p><hr /><p>This CV is built using <b>React + Redux</b> with <b>Material UI</b> as a component library.</p><p>You can edit this if you want and even play <a href=\"/joe-cv/#/breakout\">Breakout</a> <br />(try and get a top score!).</p><hr />"
+  },
+  "Breakout": {
+    "hallOfFame": [
+      {
+        "name" : "Joe Buckle",
+        "score" : 100
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 90
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 80
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 70
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 60
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 50
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 40
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 30
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 20
+      },
+      {
+        "name" : "Joe Buckle",
+        "score" : 10
+      }
+    ]
+  }
+}
