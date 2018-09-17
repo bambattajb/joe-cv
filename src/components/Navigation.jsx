@@ -18,9 +18,6 @@ const styles = {
         width: 'auto',
     },
     navigationBtn : {
-        position: 'fixed',
-        top: 10,
-        left:10,
         transform: 'scale(1.8)'
     }
 };

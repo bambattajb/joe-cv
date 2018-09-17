@@ -2,7 +2,7 @@
   "Sections" : [
     {
       "title" : "Welcome",
-      "content" : "<h2>The Curriculum Vitae of Joe Buckle</h2><p>I have 10+ years experience in website and application development.<br />In this time I have developed experience in:</p><ul><li>PHP</li><li>Python</li><li>JavaScript</li><li>MySQL</li><li>WordPress</li><li>Laravel</li><li>Linux</li><li>...loads of other stuff</li></ul><p>My job role is <b>Full Stack Developer</b> which means that I am comfortable working on all parts of the stack but I do not excel in any one area.</p><hr /><p>This CV is built using <b>React + Redux</b> with <b>Material UI</b> as a component library.</p><p>You can edit this if you want and even play <a href=\"/joe-cv/#/breakout\">Breakout</a> <br />(try and get a top score!).</p><hr />"
+      "content" : "<h3>The Curriculum Vitae of Joe Buckle</h3><p>I call myself a <b>Full Stack Developer</b> which means that I am comfortable working on all parts of the stack but I do not excel in any one area.</p><p>I have been doing this in a professional capacity for a little over 10 years but I have been an avid tinkerer much longer.<br />In this time I have developed experience in:</p><ul><li>JavaScript<ul><li>React + Redux</li><li>Express</li><li>Backbone</li><li>Angular</li></ul></li><li>PHP<ul><li>WordPress</li><li>Laravel</li></ul></li><li>Python<ul><li>Django</li><li>Wagtail</li></ul></li><li>MySQL</li><li>Linux</li><li>...many other things</li></ul><p>Completely self-taught, self-motivated and forever learning. </p>"
     },
     {
       "title" : "About me",

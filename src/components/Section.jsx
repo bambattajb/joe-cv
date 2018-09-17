@@ -9,11 +9,13 @@ import Icon from '@material-ui/core/Icon';
 import {updateSection} from "../actions";
 
 const buttonStyleRight = {
-    float: 'right'
+    float: 'right',
+    marginTop: '15px'
 };
 
 const buttonStyleLeft = {
-    float: 'left'
+    float: 'left',
+    marginTop: '15px'
 };
 
 const headerStyle = {
@@ -31,7 +33,9 @@ class Section extends Component {
             title: props.sections[props.index].title,
             content: props.sections[props.index].content,
             nextRoute: props.nextRoute,
+            nextRouteName: props.nextRouteName,
             prevRoute: props.prevRoute,
+            prevRouteName: props.prevRouteName,
             editing : false,
             type: 'static'
         };
@@ -93,12 +97,14 @@ class Section extends Component {
     render() {
         let titleHtml,
             contentHtml,
-            icon;
+            icon,
+            action;
 
         if(this.state.type==='static') {
             titleHtml = <div>{this.state.title}</div>;
             contentHtml = <div dangerouslySetInnerHTML={{__html: this.state.content}} />;
             icon = 'edit_icon';
+            action = 'edit';
         }
 
         if(this.state.type==='edit') {
@@ -121,11 +127,13 @@ class Section extends Component {
                 />
                 <hr />
                 <Typography>
-                    <p><b>Note on editing:</b></p>
-                    <p>Editing this content will save it to localStorage. To reset it back to navigate to the settings page below.</p>
+                    <b>Note on editing:</b><br />
+                    Editing this content will save it to localStorage. To reset it back to navigate to the settings page below.
                 </Typography>
             </div>;
             icon = 'save_icon';
+            action = 'save';
+
 
         }
 
@@ -133,7 +141,7 @@ class Section extends Component {
             <div>
                 <Typography variant="display2" color="inherit">
                     <Button aria-label="Edit" style={buttonStyleRight} onClick={this.changeInputState.bind()}>
-                        <Icon>{icon}</Icon>
+                        <small>{action}</small><Icon>{icon}</Icon>
                     </Button>
                 </Typography>
                 <Typography variant="headline">
@@ -148,7 +156,7 @@ class Section extends Component {
                         type='button'
                         onClick={() => { history.push(this.state.prevRoute) }}
                     >
-                        Previous section
+                        <Icon style={{verticalAlign: 'middle'}}>arrow_back</Icon> {this.state.prevRouteName}
                     </Button>
                 )} />
                 <Route render={({history}) => (
@@ -159,7 +167,7 @@ class Section extends Component {
                         type='button'
                         onClick={() => { history.push(this.state.nextRoute) }}
                     >
-                        Next section
+                        {this.state.nextRouteName} <Icon style={{verticalAlign: 'middle'}}>arrow_forward</Icon>
                     </Button>
                 )} />
                 <p>&nbsp;</p>

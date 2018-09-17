@@ -7,7 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ManageSections from './ManageSections.jsx';
 import Section from './Section.jsx';
 import Footer from './Footer.jsx';
-import Navigation from './Navigation.jsx';
+import Header from './Header.jsx';
 import Breakout from './Breakout.jsx';
 import Settings from './Settings.jsx';
 import Home from './Home';
@@ -17,6 +17,14 @@ const getSlug = (i, sectionCount) => {
     if(i>-1 && i<sectionCount) {
         return slug;
     }
+    return false;
+};
+
+const getName = (i, sections) => {
+    if(i>-1 && i<sections.length) {
+        return sections[i].title;
+    }
+
     return false;
 };
 
@@ -41,7 +49,7 @@ const bounceTransition = {
     },
     atLeave: {
         opacity: bounce(0),
-        scale: bounce(0.8),
+        scale: bounce(0.8)
     },
     atActive: {
         opacity: bounce(1),
@@ -64,6 +72,8 @@ class App extends Component {
             slug = getSlug(ii, sections.length);
             content = sections[ii].content;
             title = sections[ii].title;
+            let nextRouteName = getName(ii+1, sections);
+            let prevRouteName = getName(ii-1, sections);
 
             navSections[i] = <AnimatedSwitch
                 key={ii}
@@ -76,6 +86,8 @@ class App extends Component {
                 <Section
                     prevRoute={getSlug(ii-1, sections.length)}
                     nextRoute={getSlug(ii+1, sections.length)}
+                    nextRouteName={nextRouteName}
+                    prevRouteName={prevRouteName}
                     index={ii}
                     title={title}
                     content={content} />}
@@ -93,6 +105,7 @@ class App extends Component {
                 <CssBaseline />
                 <Router basename={process.env.PUBLIC_URL}>
                     <div>
+                        <Header />
                         <AnimatedSwitch
                             atEnter={bounceTransition.atEnter}
                             atLeave={bounceTransition.atLeave}
@@ -135,7 +148,6 @@ class App extends Component {
                     </div>
                 </Router>
                 <div id={side}>
-                    <Navigation />
                 </div>
             </React.Fragment>
         )
