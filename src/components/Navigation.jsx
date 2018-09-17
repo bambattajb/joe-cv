@@ -31,7 +31,8 @@ class Navigation extends Component {
 
         this.state = {
             left: false,
-            sections: []
+            sections: [],
+            selectedIndex:0
         }
     };
 
@@ -44,17 +45,28 @@ class Navigation extends Component {
     getNavSections() {
         let sections  = this.props.sections;
         let navSections = [],
-            slug;
+            slug,
+            that = this;
 
-        let i = 0;
-        sections.forEach(function(s) {
+        for(let i=0; i<sections.length; i++) {
             //slug = s.title.toLowerCase().replace(' ', '-');
             slug = '/section/' + i;
-            navSections[i] = <ListItem key={i} button component="a" href={process.env.PUBLIC_URL + '/#'+slug}><ListItemText primary={s.title} /></ListItem>;
-            i++;
-        });
+            navSections[i] = <ListItem
+                key={i}
+                button
+                component="a"
+                href={process.env.PUBLIC_URL + '/#'+slug}
+                selected={that.state.selectedIndex === i}
+                onClick={event => that.handleListItemClick(event, i)}
+            >
+                <ListItemText primary={sections[i].title} /></ListItem>;
+        }
 
         return navSections;
+    }
+
+    handleListItemClick(event, index) {
+        this.setState({ selectedIndex: index });
     }
 
     render() {
@@ -66,14 +78,17 @@ class Navigation extends Component {
                 <List component="nav">
                     {this.getNavSections()}
                     <Divider />
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/manage-sections'}>
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/manage-sections'} selected={this.state.selectedIndex === 100}
+                              onClick={event => this.handleListItemClick(event, 100)}>
                         <ListItemText primary="Manage Sections" />
                     </ListItem>
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/settings'}>
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/settings'} selected={this.state.selectedIndex === 101}
+                              onClick={event => this.handleListItemClick(event, 101)}>
                         <ListItemText primary="Settings" />
                     </ListItem>
                     <Divider />
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'}>
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'} selected={this.state.selectedIndex === 102}
+                              onClick={event => this.handleListItemClick(event, 102)}>
                         <ListItemText primary="Play Breakout" />
                     </ListItem>
                 </List>

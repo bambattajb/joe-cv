@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import connect from "react-redux/es/connect/connect";
 import Editor from './Editor.jsx';
+import { Route } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import {updateSection} from "../actions";
 
-const buttonStyle = {
+const buttonStyleRight = {
     float: 'right'
+};
+
+const buttonStyleLeft = {
+    float: 'left'
 };
 
 const headerStyle = {
@@ -25,6 +30,8 @@ class Section extends Component {
             index : props.index,
             title: props.sections[props.index].title,
             content: props.sections[props.index].content,
+            nextRoute: props.nextRoute,
+            prevRoute: props.prevRoute,
             editing : false,
             type: 'static'
         };
@@ -65,6 +72,22 @@ class Section extends Component {
         this.setState({
             content
         });
+    }
+
+    displayNextButton() {
+        if(this.state.nextRoute) {
+            return {display: "block"}
+        }
+
+        return {display: "none"};
+    }
+
+    displayPrevButton() {
+        if(this.state.prevRoute) {
+            return {display: "block"}
+        }
+
+        return {display: "none"};
     }
 
     render() {
@@ -109,7 +132,7 @@ class Section extends Component {
         let output = (
             <div>
                 <Typography variant="display2" color="inherit">
-                    <Button aria-label="Edit" style={buttonStyle} onClick={this.changeInputState.bind()}>
+                    <Button aria-label="Edit" style={buttonStyleRight} onClick={this.changeInputState.bind()}>
                         <Icon>{icon}</Icon>
                     </Button>
                 </Typography>
@@ -117,7 +140,30 @@ class Section extends Component {
                     <div style={headerStyle}>{titleHtml}</div>
                     <div>{contentHtml}</div>
                 </Typography>
-            </div>
+                <Route render={({history}) => (
+                    <Button
+                        style={Object.assign(this.displayPrevButton(), buttonStyleLeft)}
+                        variant="contained"
+                        color="primary"
+                        type='button'
+                        onClick={() => { history.push(this.state.prevRoute) }}
+                    >
+                        Previous section
+                    </Button>
+                )} />
+                <Route render={({history}) => (
+                    <Button
+                        style={Object.assign(this.displayNextButton(), buttonStyleRight)}
+                        variant="contained"
+                        color="primary"
+                        type='button'
+                        onClick={() => { history.push(this.state.nextRoute) }}
+                    >
+                        Next section
+                    </Button>
+                )} />
+                <p>&nbsp;</p>
+                </div>
         );
 
         return output;

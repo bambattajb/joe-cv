@@ -5,10 +5,19 @@ import { addSection, updateSectionOrder } from '../actions';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ManageSections from './ManageSections.jsx';
 import Section from './Section.jsx';
+import Footer from './Footer.jsx';
 import Navigation from './Navigation.jsx';
 import Breakout from './Breakout.jsx';
 import Settings from './Settings.jsx';
 import Home from './Home';
+
+const getSlug = (i, sectionCount) => {
+    let slug = '/section/' + i;
+    if(i>-1 && i<sectionCount) {
+        return slug;
+    }
+    return false;
+};
 
 class App extends Component {
 
@@ -22,11 +31,18 @@ class App extends Component {
         for(let i=0; i<sections.length;i++) {
             let ii = i;
             //slug = '/'+sections[ii].title.toLowerCase().replace(' ', '-');
-            slug = '/section/' + ii;
+            slug = getSlug(ii, sections.length);
             content = sections[ii].content;
             title = sections[ii].title;
 
-            navSections[i] = <Switch key={ii}><Route exact path={slug} render={() => <Section index={ii} title={title} content={content} />} /></Switch>
+            navSections[i] = <Switch key={ii}><Route exact path={slug} render={() =>
+                <Section
+                    prevRoute={getSlug(ii-1, sections.length)}
+                    nextRoute={getSlug(ii+1, sections.length)}
+                    index={ii}
+                    title={title}
+                    content={content} />}
+            /></Switch>
         }
 
         return navSections;
@@ -53,6 +69,8 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/breakout" component={Breakout} />
                         </Switch>
+
+                        <Footer />
                     </div>
                 </Router>
                 <div id={side}>
