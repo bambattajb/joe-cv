@@ -27,6 +27,8 @@ const manageSections = (state = [], action) => {
             return data;
 
         case UPDATE_SECTION_ORDER:
+            action.data = action.data.filter(function(){return true;});
+
             localStorage.setItem('sections', JSON.stringify(action.data));
             return action.data;
 

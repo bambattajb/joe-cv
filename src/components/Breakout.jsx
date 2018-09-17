@@ -3,6 +3,14 @@ import {addToBreakoutHallOfFame} from '../actions';
 import connect from "react-redux/es/connect/connect";
 import Typography from '@material-ui/core/Typography';
 
+const headerStyle = {
+    fontSize : '45px',
+    marginBottom : '10px',
+    marginTop: '30px',
+    clear: 'both'
+};
+
+
 class Breakout extends Component {
 
     static const = {
@@ -393,22 +401,19 @@ class Breakout extends Component {
 
          return (
              <div>
-                 <Typography variant="display1">
-                     Hall of Fame
-                 </Typography>
                  <Typography variant="headline">
-                     <p>
+                     <div style={headerStyle}>Hall of Fame</div>
+
                          {
                              hallOfFame.map(topScorer => {
                                  return (
-                                     <span key={topScorer.id}>
+                                     <div key={Math.random()}>
                                          {topScorer.name} -:- <b>{topScorer.score}</b>
-                                     <br />
-                                     </span>
+                                     </div>
                                  )
                              })
                          }
-                     </p>
+
                  </Typography>
              </div>
          )
@@ -417,10 +422,8 @@ class Breakout extends Component {
     showIntroText() {
         return (
             <div>
-                <Typography variant="display1">
-                    Breakout!
-                </Typography>
                 <Typography variant="headline">
+                    <div style={headerStyle}>Breakout!</div>
                     <p>This is a JavaScript (HTML5 Canvas) version of the classic 'Breakout' I've been working on.</p>
                     <p>I started this by following a tutorial and then I added my own functionality such as limiting lives and a scoring system with Hall of Fame.</p>
                     <p>I simply refactored the game code into a <b>React</b> component and used <b>Redux</b> to store and update the Hall of Fame entries.</p>

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import Section from './Section.jsx';
+import { Redirect } from 'react-router-dom';
 
 class Home extends Component {
     render() {
-        return (
-            <Section index={0} />
-        );
+        return (<Redirect to="/section/0" push />);
     }
 }
 export default Home;

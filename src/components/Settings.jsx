@@ -9,6 +9,7 @@ import connect from "react-redux/es/connect/connect";
 const headerStyle = {
     fontSize : '45px',
     marginBottom : '10px',
+    marginTop: '30px',
     clear: 'both'
 };
 

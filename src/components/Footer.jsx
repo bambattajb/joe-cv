@@ -33,6 +33,19 @@ class Footer extends Component {
                         <Grid>
                             <Button
                                 component={Link}
+                                to='/'
+                                variant="contained"
+                                color="default"
+                                type='button'
+                                size="small"
+                                className={classes.buttonMargin}
+                            >
+                                Home
+                            </Button>
+                        </Grid>
+                        <Grid>
+                            <Button
+                                component={Link}
                                 to='/manage-sections'
                                 variant="contained"
                                 color="default"
@@ -52,7 +65,6 @@ class Footer extends Component {
                                 type='button'
                                 size="small"
                                 className={classes.buttonMargin}
-
                             >
                                 Settings
                             </Button>
