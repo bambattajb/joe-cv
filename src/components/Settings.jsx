@@ -89,13 +89,14 @@ class Settings extends Component {
                         <Typography variant="title" id="modal-title">
                             Restore content to default
                         </Typography>
+                        <br />
                         <Typography>
-                            <p>By clicking ACCEPT this will remove all your changes and return you to the home page.</p>
+                            By clicking ACCEPT this will remove all your changes and return you to the home page.
                         </Typography>
-                        <p>
-                            <Button variant="contained" color="primary" onClick={this.handleModalAccept}>Accept</Button>&nbsp;
-                            <Button variant="contained" color="secondary" onClick={this.handleModalClose}>Close</Button>
-                        </p>
+                        <br />
+                        <Button variant="contained" color="primary" onClick={this.handleModalAccept}>Accept</Button>&nbsp;
+                        <Button variant="contained" color="secondary" onClick={this.handleModalClose}>Close</Button>
+
                     </div>
                 </Modal>
             </div>
