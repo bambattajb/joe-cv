@@ -33,7 +33,7 @@ class Footer extends Component {
                         <Grid>
                             <Button
                                 component={Link}
-                                to={process.env.PUBLIC_URL + '/manage-sections'}
+                                to='/manage-sections'
                                 variant="contained"
                                 color="default"
                                 type='button'
@@ -46,7 +46,7 @@ class Footer extends Component {
                         <Grid>
                             <Button
                                 component={Link}
-                                to={process.env.PUBLIC_URL + '/settings'}
+                                to='/settings'
                                 variant="contained"
                                 color="default"
                                 type='button'
@@ -60,7 +60,7 @@ class Footer extends Component {
                         <Grid>
                             <Button
                                 component={Link}
-                                to={process.env.PUBLIC_URL + '/breakout'}
+                                to='/breakout'
                                 variant="contained"
                                 color="secondary"
                                 type='button'
