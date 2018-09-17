@@ -1,5 +1,4 @@
 import { ADDTO_BREAKOUT_HALLOFFAME } from '../constants';
-import { bake_cookie, read_cookie } from 'sfcookies';
 import Content from '../content.json';
 
 const topScorer = (action) => {
@@ -16,18 +15,15 @@ const sortHighScores = (scores) => {
     });
 };
 
-let cookie = read_cookie('hallOfFame');
-if(Array.isArray(cookie)) {
-    bake_cookie('hallOfFame', sortHighScores(Content.Breakout.hallOfFame));
-}
-
 const hallOfFame = (state = [], action) => {
     let data = null;
-    let cookie = read_cookie('hallOfFame');
+    let storage = localStorage.getItem('hallOfFame');
 
-    if(Array.isArray(cookie)) {
-        state = cookie;
+    if(storage==null) {
+        localStorage.setItem('hallOfFame', JSON.stringify(Content.Breakout.hallOfFame));
     }
+
+    state = JSON.parse(storage);
 
     switch(action.type) {
         case ADDTO_BREAKOUT_HALLOFFAME:
@@ -42,7 +38,7 @@ const hallOfFame = (state = [], action) => {
                 data.pop();
             }
 
-            bake_cookie('hallOfFame', data);
+            localStorage.setItem('hallOfFame', JSON.stringify(data));
             return data;
 
         default:

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { updateWelcomeContent } from '../actions';
+import connect from "react-redux/es/connect/connect";
 import Editor from './Editor.jsx';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import { read_cookie } from 'sfcookies';
+import {updateSection} from "../actions";
 
 const buttonStyle = {
     float: 'right'
@@ -19,18 +17,14 @@ const headerStyle = {
     clear: 'both'
 };
 
-class Welcome extends Component {
-
+class Section extends Component {
     constructor(props) {
-        let cookie = read_cookie('welcomeContent');
-        if(Array.isArray(cookie)) {
-            cookie = false;
-        }
-
         super(props);
+
         this.state = {
-            title: (cookie ? cookie.title : 'Welcome'),
-            content: (cookie ? cookie.content : 'No content yet'),
+            index : props.index,
+            title: props.sections[props.index].title,
+            content: props.sections[props.index].content,
             editing : false,
             type: 'static'
         };
@@ -49,10 +43,12 @@ class Welcome extends Component {
         if(this.state.type==='edit') {
             this.setState({type: 'static'});
 
-            this.props.updateWelcomeContent({
+            this.props.updateSection({
+                index : this.state.index,
                 title : this.state.title,
                 content : this.state.content
             });
+
         }
 
         return false;
@@ -95,10 +91,17 @@ class Welcome extends Component {
                 onChange={this.handleInputChange}
                 style={headerStyle}
             />;
-            contentHtml = <Editor
-                content={this.state.content}
-                onChange={this.handleContentChange}
-            />;
+            contentHtml = <div>
+                <Editor
+                    content={this.state.content}
+                    onChange={this.handleContentChange}
+                />
+                <hr />
+                <Typography>
+                    <p><b>Note on editing:</b></p>
+                    <p>Editing this content will save it to localStorage. To reset it back to navigate to the settings page below.</p>
+                </Typography>
+            </div>;
             icon = 'save_icon';
 
         }
@@ -118,12 +121,13 @@ class Welcome extends Component {
         );
 
         return output;
-
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({updateWelcomeContent}, dispatch);
+function mapStateToProps(state) {
+    return {
+        sections: state.manageSections
+    }
 }
 
-export default connect(null, mapDispatchToProps)(Welcome);
+export default connect(mapStateToProps, {updateSection})(Section);

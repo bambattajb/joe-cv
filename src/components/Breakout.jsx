@@ -424,6 +424,7 @@ class Breakout extends Component {
                     <p>This is a JavaScript (HTML5 Canvas) version of the classic 'Breakout' I've been working on.</p>
                     <p>I started this by following a tutorial and then I added my own functionality such as limiting lives and a scoring system with Hall of Fame.</p>
                     <p>I simply refactored the game code into a <b>React</b> component and used <b>Redux</b> to store and update the Hall of Fame entries.</p>
+                    <p>Use the mouse to move the paddle left and right.</p>
                 </Typography>
             </div>
         )

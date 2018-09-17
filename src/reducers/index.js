@@ -1,10 +1,11 @@
 import {combineReducers} from 'redux';
-import welcomeContent from './welcomeContent.reducer';
+import manageSections from './manageSections.reducer';
+import Settings from './settings.reducer';
 import hallOfFame from './hallOfFame.reducer';
 
-
 const rootReducer = combineReducers({
-    welcomeContent,
+    manageSections,
+    Settings,
     hallOfFame
 });
 

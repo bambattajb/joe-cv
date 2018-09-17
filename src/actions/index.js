@@ -1,11 +1,60 @@
-import { UPDATE_WELCOME_CONTENT } from '../constants.js';
-import { ADDTO_BREAKOUT_HALLOFFAME } from '../constants.js';
+import {
+    // Sections
+    ADD_SECTION,
+    UPDATE_SECTION,
+    UPDATE_SECTION_ORDER,
+    // Settings
+    RESET_CONTENT,
+    // Breakout
+    ADDTO_BREAKOUT_HALLOFFAME
+} from '../constants.js';
 
-export const updateWelcomeContent = (data) => {
+const getSections = () => {
+    return  JSON.parse(localStorage.getItem('sections'));
+};
+
+export const addSection = (data) => {
     const action = {
-        type: UPDATE_WELCOME_CONTENT,
-        title: data.title,
-        content: data.content
+        type: ADD_SECTION,
+        title : data.title,
+        content : '' // Default no content
+    };
+
+    return action;
+};
+
+export const updateSection = (data) => {
+    let sections = getSections();
+
+    sections[data.index] = {
+        title : data.title,
+        content : data.content
+    };
+
+    const action = {
+        type: UPDATE_SECTION,
+        sections
+    };
+
+    return action;
+};
+
+export const deleteSection = (index) => {
+    let sections = getSections();
+    sections.splice(index, 1);
+
+    const action = {
+        type: UPDATE_SECTION,
+        sections
+    };
+
+    return action;
+};
+
+export const updateSectionOrder = (data) => {
+    const action = {
+        type: UPDATE_SECTION_ORDER,
+        data: data
     };
 
     return action;
@@ -17,5 +66,14 @@ export const addToBreakoutHallOfFame = (data) => {
         name: data.name,
         score: data.score
     };
+    return action;
+};
+
+
+export const resetContent = () => {
+    const action = {
+        type: RESET_CONTENT
+    };
+
     return action;
 };

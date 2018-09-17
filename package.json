@@ -14,8 +14,9 @@
     "react-router-dom": "^4.3.1",
     "react-rte": "^0.16.1",
     "react-scripts": "1.1.5",
+    "react-sortable-hoc": "^0.8.3",
+    "reactjs-popup": "^1.2.0",
     "redux": "^4.0.0",
-    "sfcookies": "^1.0.2",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {

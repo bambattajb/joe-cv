@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
+import { addSection, updateSectionOrder } from '../actions';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -24,9 +26,13 @@ const styles = {
 };
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
 
-    state = {
-        left: false
+        this.state = {
+            left: false,
+            sections: []
+        }
     };
 
     toggleNavigation = (open) => () => {
@@ -35,14 +41,36 @@ class Navigation extends Component {
         });
     };
 
+    getNavSections() {
+        let sections  = this.props.sections;
+        let navSections = [],
+            slug;
+
+        let i = 0;
+        sections.forEach(function(s) {
+            //slug = s.title.toLowerCase().replace(' ', '-');
+            slug = '/section/' + i;
+            navSections[i] = <ListItem key={i} button component="a" href={process.env.PUBLIC_URL + '/#'+slug}><ListItemText primary={s.title} /></ListItem>;
+            i++;
+        });
+
+        return navSections;
+    }
+
     render() {
+
         const { classes } = this.props;
 
         const sideList = (
             <div className={classes.list}>
                 <List component="nav">
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/'}>
-                        <ListItemText primary="Welcome" />
+                    {this.getNavSections()}
+                    <Divider />
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/manage-sections'}>
+                        <ListItemText primary="Manage Sections" />
+                    </ListItem>
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/settings'}>
+                        <ListItemText primary="Settings" />
                     </ListItem>
                     <Divider />
                     <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'}>
@@ -70,4 +98,10 @@ class Navigation extends Component {
     }
 }
 
-export default withStyles(styles)(Navigation);
+function mapStateToProps(state) {
+    return {
+        sections : state.manageSections
+    }
+}
+
+export default connect(mapStateToProps, {addSection, updateSectionOrder})(withStyles(styles)(Navigation));

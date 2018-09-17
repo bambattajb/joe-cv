@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Welcome from './Welcome.jsx';
+import Section from './Section.jsx';
 
 class Home extends Component {
     render() {
         return (
-            <Welcome />
+            <Section index={0} />
         );
     }
 }
