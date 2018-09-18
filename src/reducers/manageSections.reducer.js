@@ -12,12 +12,13 @@ const addSection = (action) => {
 const manageSections = (state = [], action) => {
     let data = null;
 
-    let storage = localStorage.getItem('sections');
+    /*let storage = localStorage.getItem('sections');
     if(storage==null) {
          localStorage.setItem('sections', JSON.stringify(Content.Sections));
     }
 
-    state = JSON.parse(storage);
+    state = JSON.parse(storage); */
+    state = Content.Sections;
 
     switch(action.type) {
         case ADD_SECTION:

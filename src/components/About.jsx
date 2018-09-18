@@ -26,7 +26,7 @@ class About extends Component {
                             <b>Manage Sections</b>
                         </p>
                         <p>
-                            I have simply used LocalStorage to store any content changes. If you want to restore the content back to default navigate to:<br /> <b>Settings</b> > <b>Reset content to default</b>
+                            If you want to restore the content back to default navigate to:<br /> <b>Settings</b> > <b>Reset content to default</b> or refresh the app.
                         </p>
                         <p><small><span style={{display:"inline-block", transform: "scaleX(-1)"}}>©</span> 2018 Joe Buckle</small></p>
                     </div>

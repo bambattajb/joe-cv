@@ -17,13 +17,14 @@ const sortHighScores = (scores) => {
 
 const hallOfFame = (state = [], action) => {
     let data = null;
-    let storage = localStorage.getItem('hallOfFame');
+    /*let storage = localStorage.getItem('hallOfFame');
 
     if(storage==null) {
         localStorage.setItem('hallOfFame', JSON.stringify(Content.Breakout.hallOfFame));
     }
 
-    state = JSON.parse(storage);
+    state = JSON.parse(storage); */
+    state = Content.Breakout.hallOfFame;
 
     switch(action.type) {
         case ADDTO_BREAKOUT_HALLOFFAME:
