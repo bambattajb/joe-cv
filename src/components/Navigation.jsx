@@ -82,15 +82,15 @@ class Navigation extends Component {
                     <ListSubheader>Other</ListSubheader>
                     <Divider />
                     <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/about'} selected={this.state.selectedIndex === 100}
-                              onClick={event => this.handleListItemClick(event, 101)}>
+                              onClick={event => this.handleListItemClick(event, 100)}>
                         <ListItemText primary="About this CV" />
                     </ListItem>
                     <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/manage-sections'} selected={this.state.selectedIndex === 101}
-                              onClick={event => this.handleListItemClick(event, 100)}>
+                              onClick={event => this.handleListItemClick(event, 101)}>
                         <ListItemText primary="Manage Sections" />
                     </ListItem>
                     <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/settings'} selected={this.state.selectedIndex === 102}
-                              onClick={event => this.handleListItemClick(event, 101)}>
+                              onClick={event => this.handleListItemClick(event, 102)}>
                         <ListItemText primary="Settings" />
                     </ListItem>
                     <ListItem button component="a" href="https://github.com/bambattajb/joe-cv/tree/master" target="_blank">
@@ -101,7 +101,7 @@ class Navigation extends Component {
                         <ListSubheader>Games</ListSubheader>
                         <Divider />
                         <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'} selected={this.state.selectedIndex === 103}
-                                  onClick={event => this.handleListItemClick(event, 102)}>
+                                  onClick={event => this.handleListItemClick(event, 103)}>
                             <ListItemText primary="Play Breakout" />
                         </ListItem>
                     </Hidden>
