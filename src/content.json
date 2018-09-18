@@ -2,11 +2,27 @@
   "Sections" : [
     {
       "title" : "Welcome",
-      "content" : "<h3>The Curriculum Vitae of Joe Buckle</h3><p>I call myself a <b>Full Stack Developer</b> which means that I am comfortable working on all parts of the stack but I do not excel in any one area.</p><p>I have been doing this in a professional capacity for a little over 10 years but I have been an avid tinkerer much longer.<br />In this time I have developed experience in:</p><ul><li>JavaScript<ul><li>React + Redux</li><li>Express</li><li>Backbone</li><li>Angular</li></ul></li><li>PHP<ul><li>WordPress</li><li>Laravel</li></ul></li><li>Python<ul><li>Django</li><li>Wagtail</li></ul></li><li>MySQL</li><li>Linux</li><li>...many other things</li></ul><p>Completely self-taught, self-motivated and forever learning. </p>"
+      "content" : "<h3>The Curriculum Vitae of Joe Buckle</h3><p>I am a self taught, self motivated full stack web developer seeking a full time role working with JavaScript frameworks.</p><p>I have a particular interest in <b>React + Redux.</b><br />(in fact this CV is developed using it)</p>"
     },
     {
-      "title" : "About me",
-      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>"
+      "title" : "What I've been doing",
+      "content" : "<p>For a little over 10 years I have been running a small agency that has been developing, supporting and hosting websites and apps for various companies and organisations.</p><p>As I was pretty much the only developer I had to adapt to differing needs. This meant that sometimes I would be working with PHP, WordPress and MySQL and another time I may be working with Python, Django and PostgreSQL.</p><p>In addition to this I would also set up hosting environments. Some would need to support heavy traffic with minimal processing and others not so much traffic but with heavy processing.</p>"
+    },
+    {
+      "title" : "What I want to do",
+      "content" : "<p>I've ultimately decided that running an agency is not for me.</p><p>In fact, what I really want to do is focus on my craft - <i>to become the best at it I can be.</i></p><p>I'm most excited about JavaScript and I would love a full time position working with it but I can also be useful to a company who might be looking to migrate from a Python or PHP based website or app to JavaScript.</p>"
+    },
+    {
+      "title" : "About my skills",
+      "content" : "<p>Although I am self taught, I have used online study material and taken deep dives into some of the technology that I use. There are some areas that I know more about than others.</p><p>I have a deep understanding of core JavaScript and PHP and a good understanding of React + Redux, Express, Laravel, WordPress, MySQL.</p><p>I am also pretty good with vanilla Python and Django framework and I've taken steps towards understanding developing for Wagtail CMS.</p><p>I am constantly exploring technology and how I can improve my skills to become more useful.</p>"
+    },
+    {
+      "title" : "What I can offer",
+      "content" : "<p>Whilst I bring quite a few years experience with me and some important skills - in addition I am always trying to be helpful, useful and as accommodating as possible.</p><p>I am very committed and I take pride in the work I do.</p><p>I have to deal with the end users in my current role so I have a good understanding of their needs.</p><p>I have also been told I make a nice cup of tea.</p>"
+    },
+    {
+      "title" : "Some personal stuff",
+      "content" : "<p>When I'm not writing code I am an occasional marathon runner and train for such events. This year I have attempted 2 ultra marathons, the first I had to end at 26 miles due to a knee injury and the second I succeeded in finishing. I also enjoy participating in and watching boxing.</p><p>I also have an interest in cooking (and eating!) healthy food and enjoy a nice craft lager fairly regularly.</p>"
     }
   ],
   "Breakout": {

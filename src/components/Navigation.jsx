@@ -6,6 +6,7 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
 import Divider from '@material-ui/core/Divider';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
@@ -74,19 +75,29 @@ class Navigation extends Component {
         const sideList = (
             <div className={classes.list}>
                 <List component="nav">
-                    {this.getNavSections()}
+                    <ListSubheader>My CV</ListSubheader>
                     <Divider />
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/manage-sections'} selected={this.state.selectedIndex === 100}
+                    {this.getNavSections()}
+                    <br />
+                    <ListSubheader>Other</ListSubheader>
+                    <Divider />
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/about'} selected={this.state.selectedIndex === 100}
+                              onClick={event => this.handleListItemClick(event, 101)}>
+                        <ListItemText primary="About this CV" />
+                    </ListItem>
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/manage-sections'} selected={this.state.selectedIndex === 101}
                               onClick={event => this.handleListItemClick(event, 100)}>
                         <ListItemText primary="Manage Sections" />
                     </ListItem>
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/settings'} selected={this.state.selectedIndex === 101}
+                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/settings'} selected={this.state.selectedIndex === 102}
                               onClick={event => this.handleListItemClick(event, 101)}>
                         <ListItemText primary="Settings" />
                     </ListItem>
                     <Hidden smDown>
+                        <br />
+                        <ListSubheader>Games</ListSubheader>
                         <Divider />
-                        <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'} selected={this.state.selectedIndex === 102}
+                        <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'} selected={this.state.selectedIndex === 103}
                                   onClick={event => this.handleListItemClick(event, 102)}>
                             <ListItemText primary="Play Breakout" />
                         </ListItem>

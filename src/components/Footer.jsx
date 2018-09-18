@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Hidden from "@material-ui/core/Hidden";
-import List from "@material-ui/core/List";
 
 const styles = theme => ({
     root: {
@@ -43,6 +42,19 @@ class Footer extends Component {
                                 className={classes.buttonMargin}
                             >
                                 Home
+                            </Button>
+                        </Grid>
+                        <Grid>
+                            <Button
+                                component={Link}
+                                to='/about'
+                                variant="contained"
+                                color="default"
+                                type='button'
+                                size="small"
+                                className={classes.buttonMargin}
+                            >
+                                About
                             </Button>
                         </Grid>
                         <Grid>

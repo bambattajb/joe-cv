@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { addSection, updateSectionOrder } from '../actions';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import ScrollToTop from './ScrollToTop.jsx';
 import ManageSections from './ManageSections.jsx';
 import Section from './Section.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import Breakout from './Breakout.jsx';
 import Settings from './Settings.jsx';
+import About from './About.jsx';
 import Home from './Home';
 
 const getSlug = (i, sectionCount) => {
@@ -69,12 +71,16 @@ class App extends Component {
             <React.Fragment>
                 <CssBaseline />
                 <Router basename={process.env.PUBLIC_URL}>
+                    <ScrollToTop>
                     <div>
                         <Header />
                         <Switch>
                             <Route exact path="/" component={Home} />
                         </Switch>
                         {this.getDynamicSectionRoutes()}
+                        <Switch>
+                            <Route exact path="/about" component={About} />
+                        </Switch>
                         <Switch>
                             <Route exact path="/manage-sections" component={ManageSections} />
                         </Switch>
@@ -86,6 +92,7 @@ class App extends Component {
                         </Switch>
                         <Footer />
                     </div>
+                    </ScrollToTop>
                 </Router>
                 <div id={side}>
                 </div>

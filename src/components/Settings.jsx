@@ -62,7 +62,7 @@ class Settings extends Component {
         });
 
         this.props.resetContent();
-        this.props.history.push('/')
+        window.location.replace(process.env.PUBLIC_URL);
     };
 
     render() {
