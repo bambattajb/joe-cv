@@ -46,6 +46,18 @@ const styles = theme => ({
 
 const DragHandle = SortableHandle(() => <span style={{cursor : "pointer"}} ><Icon>drag_indicator</Icon></span>);
 
+const deleteButton = (idx, onRemove) => {
+    if(idx!==0) {
+        return(
+            <Button onClick={() => onRemove(idx)} style={alignRight}>
+                <Icon>delete_icon</Icon>
+            </Button>
+        )
+    }
+
+    return false;
+};
+
 const SortableItem = SortableElement(({idx, onRemove, value}) =>
     <ListItem style={{
         background:"white",
@@ -54,9 +66,7 @@ const SortableItem = SortableElement(({idx, onRemove, value}) =>
         WebkitUserSelect:"none"
     }}><DragHandle />
     <ListItemText>{value}</ListItemText>
-        <Button onClick={() => onRemove(idx)} style={alignRight}>
-            <Icon>delete_icon</Icon>
-        </Button>
+        {deleteButton(idx, onRemove)}
     </ListItem>
 );
 
