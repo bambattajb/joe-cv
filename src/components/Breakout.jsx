@@ -6,8 +6,8 @@ import Typography from '@material-ui/core/Typography';
 const headerStyle = {
     fontSize : '45px',
     marginBottom : '10px',
-    marginTop: '30px',
-    clear: 'both'
+    clear: 'both',
+    marginTop: '55px'
 };
 
 

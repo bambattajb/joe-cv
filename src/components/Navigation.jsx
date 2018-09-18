@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
 
 const styles = {
     list: {
@@ -83,11 +84,13 @@ class Navigation extends Component {
                               onClick={event => this.handleListItemClick(event, 101)}>
                         <ListItemText primary="Settings" />
                     </ListItem>
-                    <Divider />
-                    <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'} selected={this.state.selectedIndex === 102}
-                              onClick={event => this.handleListItemClick(event, 102)}>
-                        <ListItemText primary="Play Breakout" />
-                    </ListItem>
+                    <Hidden smDown>
+                        <Divider />
+                        <ListItem button component="a" href={process.env.PUBLIC_URL + '/#/breakout'} selected={this.state.selectedIndex === 102}
+                                  onClick={event => this.handleListItemClick(event, 102)}>
+                            <ListItemText primary="Play Breakout" />
+                        </ListItem>
+                    </Hidden>
                 </List>
             </div>
         );

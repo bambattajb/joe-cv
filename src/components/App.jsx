@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import { spring, AnimatedSwitch } from 'react-router-transition';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { addSection, updateSectionOrder } from '../actions';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ManageSections from './ManageSections.jsx';
@@ -28,34 +27,6 @@ const getName = (i, sections) => {
     return false;
 };
 
-function mapStyles(styles) {
-    return {
-        opacity: styles.opacity,
-        transform: `scale(${styles.scale})`,
-    };
-}
-
-function bounce(val) {
-    return spring(val, {
-        stiffness: 330,
-        damping: 22,
-    });
-}
-
-const bounceTransition = {
-    atEnter: {
-        opacity: 0,
-        scale: 1.2,
-    },
-    atLeave: {
-        opacity: bounce(0),
-        scale: bounce(0.8)
-    },
-    atActive: {
-        opacity: bounce(1),
-        scale: bounce(1),
-    },
-};
 
 class App extends Component {
 
@@ -75,14 +46,8 @@ class App extends Component {
             let nextRouteName = getName(ii+1, sections);
             let prevRouteName = getName(ii-1, sections);
 
-            navSections[i] = <AnimatedSwitch
-                key={ii}
-                atEnter={bounceTransition.atEnter}
-                atLeave={bounceTransition.atLeave}
-                atActive={bounceTransition.atActive}
-                mapStyles={mapStyles}
-                className="route-wrapper"
-            ><Route exact path={slug} render={() =>
+            navSections[i] = <Switch key={ii}>
+                <Route exact path={slug} render={() =>
                 <Section
                     prevRoute={getSlug(ii-1, sections.length)}
                     nextRoute={getSlug(ii+1, sections.length)}
@@ -91,7 +56,7 @@ class App extends Component {
                     index={ii}
                     title={title}
                     content={content} />}
-            /></AnimatedSwitch>
+            /></Switch>
         }
 
         return navSections;
@@ -106,44 +71,19 @@ class App extends Component {
                 <Router basename={process.env.PUBLIC_URL}>
                     <div>
                         <Header />
-                        <AnimatedSwitch
-                            atEnter={bounceTransition.atEnter}
-                            atLeave={bounceTransition.atLeave}
-                            atActive={bounceTransition.atActive}
-                            mapStyles={mapStyles}
-                            className="route-wrapper"
-                        >
+                        <Switch>
                             <Route exact path="/" component={Home} />
-                        </AnimatedSwitch>
+                        </Switch>
                         {this.getDynamicSectionRoutes()}
-                        <AnimatedSwitch
-                            atEnter={bounceTransition.atEnter}
-                            atLeave={bounceTransition.atLeave}
-                            atActive={bounceTransition.atActive}
-                            mapStyles={mapStyles}
-                            className="route-wrapper"
-                        >
+                        <Switch>
                             <Route exact path="/manage-sections" component={ManageSections} />
-                        </AnimatedSwitch>
-                        <AnimatedSwitch
-                            atEnter={bounceTransition.atEnter}
-                            atLeave={bounceTransition.atLeave}
-                            atActive={bounceTransition.atActive}
-                            mapStyles={mapStyles}
-                            className="route-wrapper"
-                        >
+                        </Switch>
+                        <Switch>
                             <Route exact path="/settings" component={Settings} />
-                        </AnimatedSwitch>
-                        <AnimatedSwitch
-                            atEnter={bounceTransition.atEnter}
-                            atLeave={bounceTransition.atLeave}
-                            atActive={bounceTransition.atActive}
-                            mapStyles={mapStyles}
-                            className="route-wrapper"
-                        >
+                        </Switch>
+                        <Switch>
                             <Route exact path="/breakout" component={Breakout} />
-                        </AnimatedSwitch>
-
+                        </Switch>
                         <Footer />
                     </div>
                 </Router>

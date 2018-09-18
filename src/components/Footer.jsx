@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import Hidden from "@material-ui/core/Hidden";
+import List from "@material-ui/core/List";
 
 const styles = theme => ({
     root: {
@@ -15,7 +17,7 @@ const styles = theme => ({
         borderTop:"1px solid grey"
     },
     buttonMargin : {
-        margin:"0 10px 10px 10px"
+        margin:"5px"
     }
 });
 
@@ -69,20 +71,22 @@ class Footer extends Component {
                                 Settings
                             </Button>
                         </Grid>
-                        <Grid>
-                            <Button
-                                component={Link}
-                                to='/breakout'
-                                variant="contained"
-                                color="secondary"
-                                type='button'
-                                size="small"
-                                className={classes.buttonMargin}
+                        <Hidden smDown>
+                            <Grid>
+                                <Button
+                                    component={Link}
+                                    to='/breakout'
+                                    variant="contained"
+                                    color="secondary"
+                                    type='button'
+                                    size="small"
+                                    className={classes.buttonMargin}
 
-                            >
-                                Play Breakout!
-                            </Button>
-                        </Grid>
+                                >
+                                    Play Breakout!
+                                </Button>
+                            </Grid>
+                        </Hidden>
                     </Grid>
                 </Grid>
             </Grid>

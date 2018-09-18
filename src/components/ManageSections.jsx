@@ -15,8 +15,8 @@ import TextField from "@material-ui/core/TextField";
 const headerStyle = {
     fontSize : '45px',
     marginBottom : '10px',
-    marginTop: '30px',
-    clear: 'both'
+    clear: 'both',
+    marginTop: '55px'
 };
 
 const alignRight = {

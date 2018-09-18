@@ -9,8 +9,8 @@ import connect from "react-redux/es/connect/connect";
 const headerStyle = {
     fontSize : '45px',
     marginBottom : '10px',
-    marginTop: '30px',
-    clear: 'both'
+    clear: 'both',
+    marginTop: '55px'
 };
 
 function getModalStyle() {
@@ -62,7 +62,7 @@ class Settings extends Component {
         });
 
         this.props.resetContent();
-        window.location.replace('/');
+        this.props.history.push('/')
     };
 
     render() {
