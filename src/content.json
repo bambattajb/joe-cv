@@ -22,7 +22,11 @@
     },
     {
       "title" : "Some personal stuff",
-      "content" : "<p>When I'm not writing code I am an occasional marathon runner and train for such events. This year I have attempted 2 ultra marathons, the first I had to end at 26 miles due to a knee injury and the second I succeeded in finishing. I also enjoy participating in and watching boxing.</p><p>I also have an interest in cooking (and eating!) healthy food and enjoy a nice craft lager fairly regularly.</p>"
+      "content" : "<p>When I'm not writing code I am an occasional marathon runner and train for such events. This year I have attempted 2 ultra marathons, the first I had to end at 26 miles due to a knee injury and the second I succeeded in finishing. I also enjoy participating in and watching boxing and hiking when the weather is too hot to run.</p><p>I also have an interest in cooking (and eating!) healthy food and enjoy a nice craft lager fairly regularly.</p>"
+    },
+    {
+      "title" : "Contact details",
+      "content" : "<p>Please contact me via e-mail or LinkedIn</p><p>Email: <b>joe@white-fire.co.uk</b></p><p>LinkedIn: <b><a href=\"https://www.linkedin.com/in/joebuckle1/\" target=\"_blank\">https://www.linkedin.com/in/joebuckle1/</a></b></p>"
     }
   ],
   "Breakout": {
