@@ -93,6 +93,9 @@ class Navigation extends Component {
                               onClick={event => this.handleListItemClick(event, 101)}>
                         <ListItemText primary="Settings" />
                     </ListItem>
+                    <ListItem button component="a" href="https://github.com/bambattajb/joe-cv/tree/master" target="_blank">
+                        <ListItemText primary="Code" />
+                    </ListItem>
                     <Hidden smDown>
                         <br />
                         <ListSubheader>Games</ListSubheader>
