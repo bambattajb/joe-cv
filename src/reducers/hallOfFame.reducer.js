@@ -39,7 +39,7 @@ const hallOfFame = (state = [], action) => {
                 data.pop();
             }
 
-            localStorage.setItem('hallOfFame', JSON.stringify(data));
+            //localStorage.setItem('hallOfFame', JSON.stringify(data));
             return data;
 
         default:

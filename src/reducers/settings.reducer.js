@@ -1,9 +1,9 @@
 import { RESET_CONTENT } from '../constants';
-import Content from '../content.json';
+//import Content from '../content.json';
 
 const resetContent = () => {
-    localStorage.setItem('sections', JSON.stringify(Content.Sections));
-    localStorage.setItem('hallOfFame', JSON.stringify(Content.Breakout.hallOfFame));
+    //localStorage.setItem('sections', JSON.stringify(Content.Sections));
+    //localStorage.setItem('hallOfFame', JSON.stringify(Content.Breakout.hallOfFame));
 
 };
 

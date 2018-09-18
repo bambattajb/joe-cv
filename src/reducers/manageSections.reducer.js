@@ -24,17 +24,17 @@ const manageSections = (state = [], action) => {
         case ADD_SECTION:
             data = [...state, addSection(action)];
 
-            localStorage.setItem('sections', JSON.stringify(data));
+            //localStorage.setItem('sections', JSON.stringify(data));
             return data;
 
         case UPDATE_SECTION_ORDER:
             action.data = action.data.filter(function(){return true;});
 
-            localStorage.setItem('sections', JSON.stringify(action.data));
+            //localStorage.setItem('sections', JSON.stringify(action.data));
             return action.data;
 
         case UPDATE_SECTION:
-            localStorage.setItem('sections', JSON.stringify(action.sections));
+            //localStorage.setItem('sections', JSON.stringify(action.sections));
             return action.sections;
 
         default:
