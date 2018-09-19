@@ -144,7 +144,7 @@ class Section extends Component {
                         <small>{action}</small><Icon>{icon}</Icon>
                     </Button>
                 </Typography>
-                <Typography variant="headline">
+                <Typography variant="body1">
                     <div style={headerStyle}>{titleHtml}</div>
                     <div>{contentHtml}</div>
                 </Typography>

@@ -2,23 +2,19 @@
   "Sections" : [
     {
       "title" : "Welcome",
-      "content" : "<h3>The Curriculum Vitae of Joe Buckle</h3><p>I am a self taught, self motivated full stack web developer seeking a full time role working with JavaScript frameworks.</p><p>I have a particular interest in <b>React + Redux.</b><br />(in fact this CV is developed using it)</p>"
+      "content" : "<p>I am a self taught, self motivated mid-30s web developer with over 10 years experience.</p><p>I have helped dozens of companies and organisations bring websites and web applications from concept to publish.</p><p>I am comfortable with AND enjoy working on all areas of the stack.</p><p>I am good with: <br /><b>PHP</b> (including WordPress & Laravel), <br /><b>JavaScript</b> (including React + Redux, Node.js & task runners, webpack etc...), <br /><b>Python</b> (including Django & Wagtail), <br /><b>MySQL or NoSQL</b>, <br /><b>Linux</b> (System Administration and maintenance),<br />...and others</p>"
     },
     {
       "title" : "What I've been doing",
-      "content" : "<p>For a little over 10 years I have been running a small agency that has been developing, supporting and hosting websites and apps for various companies and organisations.</p><p>As I was pretty much the only developer I had to adapt to differing needs. This meant that sometimes I would be working with PHP, WordPress and MySQL and another time I may be working with Python, Django and PostgreSQL.</p><p>In addition to this I would also set up hosting environments. Some would need to support heavy traffic with minimal processing and others not so much traffic but with heavy processing.</p>"
+      "content" : "<p>For a little over 10 years I have been running a small business that has been developing, supporting and hosting websites and apps for various companies and organisations.</p><p>As I was pretty much the only developer I had to adapt to differing needs. Sometimes I would be working with PHP, WordPress and MySQL and another time I may be working with Python, Django and PostgreSQL.</p><p>In addition to this I would also set up hosting environments. Some would need to support heavy traffic but with minimal processing and others the other way around so I've become quite good at calculating the potential resource usage for apps based on their uses and functionality.</p><p>Being involved on the server-side has also improved my development over the years since I understand how processes consume resources and write efficient code to mitigate future problems.</p><p>I always worked closely with our clients and I understand their side; this has resulted in me becoming a good communicator.</p>"
     },
     {
       "title" : "What I want to do",
-      "content" : "<p>I've ultimately decided that running an agency is not for me.</p><p>In fact, what I really want to do is focus on my craft - <i>to become the best at it I can be.</i></p><p>I'm most excited about JavaScript and I would love a full time position working with it but I can also be useful to a company who might be looking to migrate from a Python or PHP based website or app to JavaScript.</p>"
+      "content" : "<p>Although I am comfortable working on all of the stack I do not excel in any one area. I would be best suited to a company looking for an all-rounder although I would be happy to focus on one area.</p><p>I want to be part of a team of professionals and enthusiasts just like myself and aim to become the best I can at my craft. I also like to help make clients happy so working in a creative / digital agency would fulfil that.</p>"
     },
     {
       "title" : "About my skills",
-      "content" : "<p>Although I am self taught, I have used online study material and taken deep dives into some of the technology that I use. There are some areas that I know more about than others.</p><p>I have a deep understanding of core JavaScript and PHP and a good understanding of React + Redux, Express, Laravel, WordPress, MySQL.</p><p>I am also pretty good with vanilla Python and Django framework and I've taken steps towards understanding developing for Wagtail CMS.</p><p>I am constantly exploring technology and how I can improve my skills to become more useful.</p>"
-    },
-    {
-      "title" : "What I can offer",
-      "content" : "<p>Whilst I bring quite a few years experience with me and some important skills - in addition I am always trying to be helpful, useful and as accommodating as possible.</p><p>I am very committed and I take pride in the work I do.</p><p>I have to deal with the end users in my current role so I have a good understanding of their needs.</p><p>I have also been told I make a nice cup of tea.</p>"
+      "content" : "<p>Although I am self taught, I have used online study material and taken deep dives into the technology that I use.<p>I have a deep understanding of core JavaScript and PHP, I've been using WordPress a lot in my role, and a good understanding of React + Redux, Express, Laravel, MySQL / NoSQL.</p><p>I am also pretty good with vanilla Python and Django.</p><p>I am constantly exploring technology and how I can improve my skills to become more useful.</p>"
     },
     {
       "title" : "Some personal stuff",
